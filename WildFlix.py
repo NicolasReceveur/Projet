@@ -208,8 +208,10 @@ if st.session_state["authentication_status"]:
         sns.barplot(y=films_par_genre.index, x=films_par_genre.values, ax=ax2, color="#38807e")
         ax2.set_xlabel('')
         ax2.set_ylabel('')
+        ax2.tick_params(axis='x', labelsize=10)
+        ax2.tick_params(axis='y', labelsize=10)
         for index, value in enumerate(films_par_genre.values):
-            ax2.text(value, index, f'{value}', color='black', va="center")
+            ax2.text(value, index, f'{value}', color='black', va="center", fontsize=10)
         st.pyplot(fig2)
               
                
@@ -223,21 +225,25 @@ if st.session_state["authentication_status"]:
         sns.barplot(y=films_par_realisateur.index, x=films_par_realisateur.values, ax=ax1, color="#38807e")
         ax1.set_xlabel('')
         ax1.set_ylabel('')
+        ax1.tick_params(axis='x', labelsize=10)
+        ax1.tick_params(axis='y', labelsize=10)
         for index, value in enumerate(films_par_realisateur.values):
-            ax1.text(value, index, f'{value}', color='black', va="center")
+            ax1.text(value, index, f'{value}', color='black', va="center", fontsize=10)
         st.pyplot(fig1)
 
         # 3. 15 films les plus populaires
         st.header('Top 15 des films les plus populaires')
         films_mieux_notes = df_test[['movie_title', 'num_voted_users']].sort_values(by='num_voted_users', ascending=False).head(15)
-        fig4, ax4 = plt.subplots()
-        sns.barplot(y=films_mieux_notes['movie_title'], x=films_mieux_notes['num_voted_users'], ax=ax4, color="#38807e")
-        ax4.set_xlabel('')
-        ax4.set_ylabel('')
-        ax4.set_xticklabels([f'{int(x/1000)}k' for x in ax4.get_xticks()])
+        fig3, ax3 = plt.subplots()
+        sns.barplot(y=films_mieux_notes['movie_title'], x=films_mieux_notes['num_voted_users'], ax=ax3, color="#38807e")
+        ax3.set_xlabel('')
+        ax3.set_ylabel('')
+        ax3.tick_params(axis='x', labelsize=10)
+        ax3.tick_params(axis='y', labelsize=10)
+        ax3.set_xticklabels([f'{int(x/1000)}k' for x in ax3.get_xticks()])
         for index, value in enumerate(films_mieux_notes['num_voted_users']):
-            ax4.text(value, index, f'{value}', color='black', va="center")
-        st.pyplot(fig4)
+            ax3.text(value, index, f'{value}', color='black', va="center", fontsize=10)
+        st.pyplot(fig3)
 
         # 4. Films les mieux notés
 
@@ -248,8 +254,10 @@ if st.session_state["authentication_status"]:
         sns.barplot(y=films_mieux_notes['movie_title'], x=films_mieux_notes['imdb_score'], ax=ax4, color="#38807e")
         ax4.set_xlabel('')
         ax4.set_ylabel('')
+        ax4.tick_params(axis='x', labelsize=10)
+        ax4.tick_params(axis='y', labelsize=10)
         for index, value in enumerate(films_mieux_notes['imdb_score']):
-            ax4.text(value, index, f'{value:.2f}', color='black', va="center")
+            ax4.text(value, index, f'{value:.2f}', color='black', va="center", fontsize=10)
         st.pyplot(fig4)
 
         
