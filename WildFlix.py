@@ -101,7 +101,7 @@ elif selection == "Moteur de recherche":
 
     # Titre du tableau de bord
     st.write(
-        '<left><h5>Sélectionnez le film de votre choix, et laissez-vous guider vers des films similaires :</h5></center>',
+        '<left><h5>Sélectionnez le film de votre choix et laissez-vous guider vers des films similaires :</h5></center>',
         unsafe_allow_html=True)
     # Demander si l'utilisateur est mineur de moins de 13 ans
     is_minor = st.radio(
