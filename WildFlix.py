@@ -13,13 +13,66 @@ from streamlit_option_menu import option_menu
 from streamlit_authenticator import Authenticate
 
 
+st.markdown('''
+<style>
+            .block-container {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+                /*
+                primaryColor:"#EF9C82";
+                backgroundColor:"#123332";
+                secondaryBackgroundColor:"#1D4241";
+                textColor:"#FFD9BE";
+                font:"sans serif";
+                */
+            
+            }
+            .st-emotion-cache-6qob1r {
+                background-color: #1D4241 ! important;
+                color: #FFD9BE ! important;
+            }
+            .st-emotion-cache-12fmjuu {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+            .st-emotion-cache-1ny7cjd {
+                background-color: #1D4241 ! important;
+                color: #FFD9BE ! important;
+            }
+
+            .st-emotion-cache-1huvf7z {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+           .main {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+
+            .menu {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+            .st-emotion-cache-1jjmcle {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+            .st-emotion-cache-187vdiz {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+            .menu .container-xxl[data-v-5af006b8] {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
 
 
-#st.set_option('theme.primaryColor', '#EF9C82')  # Couleur primaire
-#st.set_option('theme.backgroundColor', '#123332')  # Couleur de fond
-#st.set_option('theme.secondaryBackgroundColor', '#1D4241')  # Couleur de fond secondaire
-#st.set_option('theme.textColor', '#FFD9BE')  # Couleur du texte
-#st.set_option('theme.font', 'Arial, sans-serif')  # Police de caractère
+            </style>
+
+            ''', unsafe_allow_html = True)
+
+
+
 
 
 
@@ -96,17 +149,17 @@ if st.session_state["authentication_status"]:
         st.image('WildFlix6h.png')
 
         st.write(
-        '<left><h5>Bienvenue sur le site web de votre cinéma local, où vous découvrirez une riche programmation de films afin de trouver votre prochaine séance idéale. </span></h1></center>',
+        '<left><h5 style="color: #FFD9BE;">Bienvenue sur le site web de votre cinéma local, où vous découvrirez une riche programmation de films afin de trouver votre prochaine séance idéale. </span></h1></center>',
         unsafe_allow_html=True
         )
 
         st.write(
-        '<left><h5>Depuis son ouverture en 1950, notre cinéma de quartier a traversé les époques, restant un pilier de la communauté. Ses murs gardent les souvenirs de générations de cinéphiles qui ont partagé leur amour du 7e art. </span></h1></center>',
+        '<left><h5 style="color: #FFD9BE;">Depuis son ouverture en 1950, notre cinéma de quartier a traversé les époques, restant un pilier de la communauté. Ses murs gardent les souvenirs de générations de cinéphiles qui ont partagé leur amour du 7e art. </span></h1></center>',
         unsafe_allow_html=True
         )
 
         st.write(
-        '<left><h5>Que vous soyez un cinéphile aguerri ou un amateur de nouvelles découvertes, notre programmation vous réserve des surprises. </span></h1></center>',
+        '<left><h5 style="color: #FFD9BE;">Que vous soyez un cinéphile aguerri ou un amateur de nouvelles découvertes, notre programmation vous réserve des surprises. </span></h1></center>',
         unsafe_allow_html=True
         )
 
@@ -119,11 +172,12 @@ if st.session_state["authentication_status"]:
 
         # Titre du tableau de bord
         st.write(
-            '<left><h5>Sélectionnez le film de votre choix et laissez-vous guider vers des films similaires </h5></center>',
+            '<left><h5 style="color: #FFD9BE;">Sélectionnez le film de votre choix et laissez-vous guider vers des films similaires </h5></center>',
             unsafe_allow_html=True)
         # Demander si l'utilisateur est mineur de moins de 13 ans
         st.markdown(
             '<p style="font-size:20px; font-weight:bold;">Sélection de films tout public (moins de 13 ans) ?</p>',unsafe_allow_html=True)
+        
         mineur = st.radio("",
                 ('Oui', 'Non')
                 )
@@ -202,7 +256,7 @@ if st.session_state["authentication_status"]:
 
     elif selection == "Projets":
         st.write(
-        '<center><h2> Projets en cours de développement</span></h1></center>',
+        '<center><h2 style="color: #FFD9BE;"> Projets en cours de développement</span></h1></center>',
         unsafe_allow_html=True
         )
         st.write("")
@@ -217,7 +271,16 @@ if st.session_state["authentication_status"]:
 
         # 1. Nombre de films par genre
         sns.set(style="whitegrid")
-        st.header('Nombre de films par genre')
+        
+        st.markdown(
+            """
+            <h2 style="color: #FFD9BE;">Nombre de films par genre</h2>
+            """, 
+            unsafe_allow_html=True
+        )
+
+
+
         genres = df_test['genres'].str.split('|').explode()
         films_par_genre = genres.value_counts()
         fig2, ax2 = plt.subplots()
@@ -234,7 +297,15 @@ if st.session_state["authentication_status"]:
         
         # 2. Nombre de films par réalisateur
         sns.set(style="whitegrid")
-        st.header('Top 15 des réalisateurs par nombre de films')
+        st.markdown(
+            """
+            <h2 style="color: #FFD9BE;">Top 15 des réalisateurs par nombre de films</h2>
+            """, 
+            unsafe_allow_html=True
+        )
+
+
+
         films_par_realisateur = df_test['director_name'].value_counts().head(15)
         fig1, ax1 = plt.subplots()
         #fig1.patch.set_facecolor('white')
@@ -248,7 +319,14 @@ if st.session_state["authentication_status"]:
         st.pyplot(fig1)
 
         # 3. 15 films les plus populaires
-        st.header('Top 15 des films les plus populaires')
+        st.markdown(
+            """
+            <h2 style="color: #FFD9BE;">Top 15 des films les plus populaires</h2>
+            """, 
+            unsafe_allow_html=True
+        )
+
+
         films_mieux_notes = df_test[['movie_title', 'num_voted_users']].sort_values(by='num_voted_users', ascending=False).head(15)
         fig3, ax3 = plt.subplots()
         sns.barplot(y=films_mieux_notes['movie_title'], x=films_mieux_notes['num_voted_users'], ax=ax3, color="#38807e")
@@ -264,7 +342,14 @@ if st.session_state["authentication_status"]:
         # 4. Films les mieux notés
 
         sns.set(style="whitegrid")
-        st.header('Top des 15 films les mieux notés')
+        st.markdown(
+            """
+            <h2 style="color: #FFD9BE;">Top des 15 films les mieux notés</h2>
+             """, 
+            unsafe_allow_html=True
+        )
+
+
         films_mieux_notes = df_test[['movie_title', 'imdb_score']].sort_values(by='imdb_score', ascending=False).head(15)
         fig4, ax4 = plt.subplots()
         sns.barplot(y=films_mieux_notes['movie_title'], x=films_mieux_notes['imdb_score'], ax=ax4, color="#38807e")
