@@ -13,12 +13,21 @@ from streamlit_option_menu import option_menu
 from streamlit_authenticator import Authenticate
 
 
+from streamlit_web import css
 
-st.set_option('theme.primaryColor', '#EF9C82')  # Couleur primaire
-st.set_option('theme.backgroundColor', '#123332')  # Couleur de fond
-st.set_option('theme.secondaryBackgroundColor', '#1D4241')  # Couleur de fond secondaire
-st.set_option('theme.textColor', '#FFD9BE')  # Couleur du texte
-st.set_option('theme.font', 'Arial, sans-serif')  # Police de caractère
+css.set_default_theme({
+    "primaryColor": "#EF9C82",
+    "backgroundColor": "#123332",
+    "secondaryBackgroundColor": "#1D4241",
+    "textColor": "#FFD9BE",
+})
+
+
+#st.set_option('theme.primaryColor', '#EF9C82')  # Couleur primaire
+#st.set_option('theme.backgroundColor', '#123332')  # Couleur de fond
+#st.set_option('theme.secondaryBackgroundColor', '#1D4241')  # Couleur de fond secondaire
+#st.set_option('theme.textColor', '#FFD9BE')  # Couleur du texte
+#st.set_option('theme.font', 'Arial, sans-serif')  # Police de caractère
 
 
 
