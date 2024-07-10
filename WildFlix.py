@@ -13,6 +13,25 @@ from streamlit_option_menu import option_menu
 from streamlit_authenticator import Authenticate
 
 
+
+st.set_option('theme.primaryColor', '#007BFF')  # Couleur primaire
+st.set_option('theme.backgroundColor', '#F0F0F0')  # Couleur de fond
+st.set_option('theme.secondaryBackgroundColor', '#E0E0E0')  # Couleur de fond secondaire
+st.set_option('theme.textColor', '#333')  # Couleur du texte
+st.set_option('theme.font', 'Arial, sans-serif')  # Police de caractère
+
+
+
+#primaryColor="#EF9C82"
+#backgroundColor="#123332"
+#secondaryBackgroundColor="#1D4241"
+#textColor="#FFD9BE"
+#font="sans serif"
+
+
+
+
+
 #Nos données utilisateurs doivent respecter ce format
 
 lesDonneesDesComptes = {'usernames': {'utilisateur': {'name': 'utilisateur',
@@ -43,11 +62,7 @@ df_genres = pd.read_csv("df_genres_acp.csv")
 if st.session_state["authentication_status"]:
   
 
-#primaryColor="#EF9C82"
-#backgroundColor="#123332"
-#secondaryBackgroundColor="#1D4241"
-#textColor="#FFD9BE"
-#font="sans serif"
+
 
     with st.sidebar:
         #Le bouton de déconnexion
