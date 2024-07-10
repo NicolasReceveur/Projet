@@ -58,7 +58,7 @@ st.markdown('''
                 color: #FFD9BE ! important;
             }
             .st-emotion-cache-187vdiz {
-                background-color: #123332 ! important;
+                background-color: #1D4241 ! important;
                 color: #FFD9BE ! important;
             }
             .menu .container-xxl[data-v-5af006b8] {
@@ -70,7 +70,7 @@ st.markdown('''
                 color: #FFD9BE ! important;
             }
             
-            
+          
 
 
             </style>
