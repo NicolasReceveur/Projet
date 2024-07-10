@@ -14,10 +14,10 @@ from streamlit_authenticator import Authenticate
 
 
 
-st.set_option('theme.primaryColor', '#007BFF')  # Couleur primaire
-st.set_option('theme.backgroundColor', '#F0F0F0')  # Couleur de fond
-st.set_option('theme.secondaryBackgroundColor', '#E0E0E0')  # Couleur de fond secondaire
-st.set_option('theme.textColor', '#333')  # Couleur du texte
+st.set_option('theme.primaryColor', '#EF9C82')  # Couleur primaire
+st.set_option('theme.backgroundColor', '#123332')  # Couleur de fond
+st.set_option('theme.secondaryBackgroundColor', '#1D4241')  # Couleur de fond secondaire
+st.set_option('theme.textColor', '#FFD9BE')  # Couleur du texte
 st.set_option('theme.font', 'Arial, sans-serif')  # Police de caractère
 
 
