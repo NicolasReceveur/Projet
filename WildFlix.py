@@ -69,6 +69,11 @@ st.markdown('''
                 background-color: #123332 ! important;
                 color: #FFD9BE ! important;
             }
+            .st-emotion-cache-1whx7iy {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+            
             
           
 
