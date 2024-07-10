@@ -130,8 +130,14 @@ if st.session_state["authentication_status"]:
         selection = option_menu(
                     menu_title=None,
                     options = ["WildFlix", "Moteur de recherche", "Projets","Dashboard"],
-                    orientation= "vertical"
-
+                    orientation= "vertical",
+                    styles={
+                        "container": {"background-color": "#1D4241"},
+                        "nav-link": {
+                            "background-color": "#1D4241",  # Couleur de fond des options non sélectionnées
+                            "color": "#FFD9BE",  # Couleur du texte des options non sélectionnées
+                        },
+                    },
                 )
         authenticator.logout("Déconnexion")
 
