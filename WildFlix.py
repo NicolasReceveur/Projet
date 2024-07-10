@@ -65,6 +65,12 @@ st.markdown('''
                 background-color: #123332 ! important;
                 color: #FFD9BE ! important;
             }
+            .st-emotion-cache-1vt4y43 {
+                background-color: #123332 ! important;
+                color: #FFD9BE ! important;
+            }
+            
+            
 
 
             </style>
@@ -249,7 +255,8 @@ if st.session_state["authentication_status"]:
                 st.write(' BANDE ANNONCE ') 
                 st.write('')
                 imdb_link = df_movies[df_movies['movie_title'] == title]['movie_imdb_link'].values[0]
-                st.markdown(f"[Voir sur IMDB]({imdb_link})", unsafe_allow_html=True)
+                #st.markdown(f"[Voir sur IMDB]({imdb_link})", unsafe_allow_html=True)
+                st.markdown(f'<a href="{imdb_link}" style="color: red;">Voir sur IMDB</a>', unsafe_allow_html=True)
 
             st.write("---")
 
@@ -290,7 +297,15 @@ if st.session_state["authentication_status"]:
         ax2.tick_params(axis='x', labelsize=10)
         ax2.tick_params(axis='y', labelsize=10)
         for index, value in enumerate(films_par_genre.values):
-            ax2.text(value, index, f'{value}', color='black', va="center", fontsize=10)
+            ax2.text(value, index, f'{value}', color='#FFD9BE', va="center", fontsize=10)
+        fig2.patch.set_alpha(0)
+        ax2.set_facecolor('none')  # Fond transparent
+        ax2.yaxis.set_tick_params(labelcolor='#FFD9BE')
+        ax2.xaxis.set_visible(False)
+        ax2.spines['top'].set_visible(False)
+        ax2.spines['right'].set_visible(False)
+        ax2.spines['bottom'].set_visible(False)
+        ax2.spines['left'].set_visible(False)
         st.pyplot(fig2)
               
                
@@ -315,7 +330,15 @@ if st.session_state["authentication_status"]:
         ax1.tick_params(axis='x', labelsize=10)
         ax1.tick_params(axis='y', labelsize=10)
         for index, value in enumerate(films_par_realisateur.values):
-            ax1.text(value, index, f'{value}', color='black', va="center", fontsize=10)
+            ax1.text(value, index, f'{value}', color='#FFD9BE', va="center", fontsize=10)
+        fig1.patch.set_alpha(0)
+        ax1.set_facecolor('none')  # Fond transparent
+        ax1.yaxis.set_tick_params(labelcolor='#FFD9BE')
+        ax1.xaxis.set_visible(False)
+        ax1.spines['top'].set_visible(False)
+        ax1.spines['right'].set_visible(False)
+        ax1.spines['bottom'].set_visible(False)
+        ax1.spines['left'].set_visible(False)
         st.pyplot(fig1)
 
         # 3. 15 films les plus populaires
@@ -333,10 +356,18 @@ if st.session_state["authentication_status"]:
         ax3.set_xlabel('')
         ax3.set_ylabel('')
         ax3.tick_params(axis='x', labelsize=10)
-        ax3.tick_params(axis='y', labelsize=10)
+        ax3.tick_params(axis='y', labelsize=15)
         ax3.set_xticklabels([f'{int(x/1000)}k' for x in ax3.get_xticks()])
         for index, value in enumerate(films_mieux_notes['num_voted_users']):
-            ax3.text(value, index, f'{value}', color='black', va="center", fontsize=10)
+            ax3.text(value, index, f'{value}', color='#FFD9BE', va="center", fontsize=12)
+        fig3.patch.set_alpha(0)
+        ax3.set_facecolor('none')  # Fond transparent
+        ax3.yaxis.set_tick_params(labelcolor='#FFD9BE')
+        ax3.xaxis.set_visible(False)
+        ax3.spines['top'].set_visible(False)
+        ax3.spines['right'].set_visible(False)
+        ax3.spines['bottom'].set_visible(False)
+        ax3.spines['left'].set_visible(False)
         st.pyplot(fig3)
 
         # 4. Films les mieux notés
@@ -348,17 +379,23 @@ if st.session_state["authentication_status"]:
              """, 
             unsafe_allow_html=True
         )
-
-
         films_mieux_notes = df_test[['movie_title', 'imdb_score']].sort_values(by='imdb_score', ascending=False).head(15)
         fig4, ax4 = plt.subplots()
         sns.barplot(y=films_mieux_notes['movie_title'], x=films_mieux_notes['imdb_score'], ax=ax4, color="#38807e")
         ax4.set_xlabel('')
         ax4.set_ylabel('')
         ax4.tick_params(axis='x', labelsize=10)
-        ax4.tick_params(axis='y', labelsize=10)
+        ax4.tick_params(axis='y', labelsize=15)
         for index, value in enumerate(films_mieux_notes['imdb_score']):
-            ax4.text(value, index, f'{value:.2f}', color='black', va="center", fontsize=10)
+            ax4.text(value, index, f'{value:.2f}', color='#FFD9BE', va="center", fontsize=12)
+        fig4.patch.set_alpha(0)
+        ax4.set_facecolor('none')  # Fond transparent
+        ax4.yaxis.set_tick_params(labelcolor='#FFD9BE')
+        ax4.xaxis.set_visible(False)
+        ax4.spines['top'].set_visible(False)
+        ax4.spines['right'].set_visible(False)
+        ax4.spines['bottom'].set_visible(False)
+        ax4.spines['left'].set_visible(False)
         st.pyplot(fig4)
 
         
