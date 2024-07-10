@@ -13,14 +13,6 @@ from streamlit_option_menu import option_menu
 from streamlit_authenticator import Authenticate
 
 
-from streamlit_web import css
-
-css.set_default_theme({
-    "primaryColor": "#EF9C82",
-    "backgroundColor": "#123332",
-    "secondaryBackgroundColor": "#1D4241",
-    "textColor": "#FFD9BE",
-})
 
 
 #st.set_option('theme.primaryColor', '#EF9C82')  # Couleur primaire
