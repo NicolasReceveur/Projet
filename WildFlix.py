@@ -262,7 +262,7 @@ if st.session_state["authentication_status"]:
                 st.write('')
                 imdb_link = df_movies[df_movies['movie_title'] == title]['movie_imdb_link'].values[0]
                 #st.markdown(f"[Voir sur IMDB]({imdb_link})", unsafe_allow_html=True)
-                st.markdown(f'<a href="{imdb_link}" style="color: red;">Voir sur IMDB</a>', unsafe_allow_html=True)
+                st.markdown(f'<a href="{imdb_link}" style="color: #F24545;">Voir sur IMDB</a>', unsafe_allow_html=True)
 
             st.write("---")
 
