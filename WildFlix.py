@@ -308,7 +308,7 @@ if st.session_state["authentication_status"]:
         ax2.tick_params(axis='x', labelsize=10)
         ax2.tick_params(axis='y', labelsize=10)
         for index, value in enumerate(films_par_genre.values):
-            ax2.text(value, index, f'{value}', color='#FFD9BE', va="center", fontsize=10)
+            ax2.text(value + 0.5, index, f'{value}', color='#FFD9BE', va="center", fontsize=10)
         fig2.patch.set_alpha(0)
         ax2.set_facecolor('none')  # Fond transparent
         ax2.yaxis.set_tick_params(labelcolor='#FFD9BE')
@@ -341,7 +341,7 @@ if st.session_state["authentication_status"]:
         ax1.tick_params(axis='x', labelsize=10)
         ax1.tick_params(axis='y', labelsize=10)
         for index, value in enumerate(films_par_realisateur.values):
-            ax1.text(value, index, f'{value}', color='#FFD9BE', va="center", fontsize=10)
+            ax1.text(value + 0.3, index, f'{value}', color='#FFD9BE', va="center", fontsize=10)
         fig1.patch.set_alpha(0)
         ax1.set_facecolor('none')  # Fond transparent
         ax1.yaxis.set_tick_params(labelcolor='#FFD9BE')
@@ -370,7 +370,7 @@ if st.session_state["authentication_status"]:
         ax3.tick_params(axis='y', labelsize=15)
         ax3.set_xticklabels([f'{int(x/1000)}k' for x in ax3.get_xticks()])
         for index, value in enumerate(films_mieux_notes['num_voted_users']):
-            ax3.text(value, index, f'{value}', color='#FFD9BE', va="center", fontsize=12)
+            ax3.text(value + 0.3, index, f'{value}', color='#FFD9BE', va="center", fontsize=12)
         fig3.patch.set_alpha(0)
         ax3.set_facecolor('none')  # Fond transparent
         ax3.yaxis.set_tick_params(labelcolor='#FFD9BE')
@@ -398,7 +398,7 @@ if st.session_state["authentication_status"]:
         ax4.tick_params(axis='x', labelsize=10)
         ax4.tick_params(axis='y', labelsize=15)
         for index, value in enumerate(films_mieux_notes['imdb_score']):
-            ax4.text(value, index, f'{value:.2f}', color='#FFD9BE', va="center", fontsize=12)
+            ax4.text(value + 0.3, index, f'{value:.2f}', color='#FFD9BE', va="center", fontsize=12)
         fig4.patch.set_alpha(0)
         ax4.set_facecolor('none')  # Fond transparent
         ax4.yaxis.set_tick_params(labelcolor='#FFD9BE')
