@@ -386,7 +386,7 @@ if st.session_state["authentication_status"]:
         sns.set(style="whitegrid")
         st.markdown(
             """
-            <h2 style="color: #FFD9BE;">Top des 15 films les mieux notés</h2>
+            <h2 style="color: #FFD9BE;">Top 15 films les mieux notés</h2>
              """, 
             unsafe_allow_html=True
         )
