@@ -134,7 +134,7 @@ if st.session_state["authentication_status"]:
     
         selection = option_menu(
                     menu_title=None,
-                    options = ["WildFlix", "Moteur de recherche", "Projets","Dashboard"],
+                    options = ["WildFlix", "Moteur de recherche", "Dashboard", "Projets"],
                     orientation= "vertical",
                     styles={
                         "container": {"background-color": "#1D4241"},
