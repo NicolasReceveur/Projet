@@ -400,7 +400,7 @@ if st.session_state["authentication_status"]:
     
     elif selection == "Projets":
         st.write(
-        '<center><h2 style="color: #FFD9BE;"> Projets en cours de développement</span></h1></center>',
+        '<center><h2 style="color: #FFD9BE;"> Propositions de Projets</span></h1></center>',
         unsafe_allow_html=True
         )
         st.write("")
