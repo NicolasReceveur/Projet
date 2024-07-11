@@ -272,18 +272,6 @@ if st.session_state["authentication_status"]:
             st.write("---")
 
 
-    elif selection == "Projets":
-        st.write(
-        '<center><h2 style="color: #FFD9BE;"> Projets en cours de développement</span></h1></center>',
-        unsafe_allow_html=True
-        )
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.image('Partage2.jpg')
-
     elif selection == "Dashboard":
         #st.write('<center><h1> DASHBOARD</span></h1></center>', unsafe_allow_html=True)
 
@@ -409,7 +397,21 @@ if st.session_state["authentication_status"]:
         ax4.spines['left'].set_visible(False)
         st.pyplot(fig4)
 
-        
+    
+    elif selection == "Projets":
+        st.write(
+        '<center><h2 style="color: #FFD9BE;"> Projets en cours de développement</span></h1></center>',
+        unsafe_allow_html=True
+        )
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.image('Partage2.jpg')
+
+
+
 elif st.session_state["authentication_status"] is False:
     st.error("L'username ou le password est/sont incorrect")
 elif st.session_state["authentication_status"] is None:
